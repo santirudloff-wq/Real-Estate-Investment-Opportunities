@@ -290,3 +290,32 @@ input:focus, select:focus { border-color: var(--navy); box-shadow: 0 0 0 2px rgb
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 .animate-fade { animation: fadeIn 0.15s ease-out; }
 @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .4; } }
+/* ── LOGIN SCREEN ── */
+.login-screen {
+  min-height: 100vh; display: flex; align-items: center; justify-content: center;
+  background: var(--gray-50); padding: 20px;
+}
+.login-card {
+  background: var(--white); border: 1px solid var(--gray-200); border-radius: 8px;
+  padding: 32px 40px; width: 100%; max-width: 400px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.06); text-align: center;
+}
+.login-brand {
+  font-weight: 700; font-size: 16px; color: var(--gray-900);
+  letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 4px;
+}
+.login-subtitle { font-size: 13px; color: var(--gray-500); margin-bottom: 24px; }
+.login-form { display: flex; flex-direction: column; gap: 12px; }
+.login-input {
+  width: 100%; padding: 10px 14px; font-size: 14px;
+  border: 1px solid var(--gray-300); border-radius: 6px;
+  outline: none; transition: border-color 0.1s;
+}
+.login-input:focus { border-color: var(--navy); box-shadow: 0 0 0 2px rgba(27,42,74,0.08); }
+.login-btn {
+  width: 100%; padding: 10px; background: var(--navy); color: var(--white);
+  border: none; border-radius: 6px; font-size: 13px; font-weight: 600;
+  cursor: pointer; transition: background 0.1s;
+}
+.login-btn:hover { background: #152340; }
+.login-error { color: var(--red); font-size: 12px; font-weight: 500; margin-top: 8px; }

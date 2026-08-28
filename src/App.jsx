@@ -45,6 +45,19 @@ export default function App() {
   const [selectedProperty, setSelectedProperty] = useState(null);
   const [alertsOpen, setAlertsOpen] = useState(false);
   const [savedIds, setSavedIds] = useState(['west-01', 'nyc-01', 'ldn-01']);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [passwordInput, setPasswordInput] = useState('');
+  const [loginError, setLoginError] = useState(false);
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    if (passwordInput === 'Veritas2026') {
+      setIsAuthenticated(true);
+      setLoginError(false);
+    } else {
+      setLoginError(true);
+    }
+  };
 
   const scored = useMemo(() =>
     PROPERTIES.map(p => ({ ...p, veritasScore: computeVeritasScore(p) })), []
@@ -76,6 +89,29 @@ export default function App() {
   const avgCap = (scored.reduce((s, p) => s + p.capRate, 0) / scored.length).toFixed(1);
   const avgIRR = (scored.reduce((s, p) => s + p.irr, 0) / scored.length).toFixed(1);
   const today = fmtDate();
+
+  if (!isAuthenticated) {
+    return (
+      <div className="login-screen">
+        <div className="login-card">
+          <div className="login-brand">VERITAS</div>
+          <div className="login-subtitle">Capital Real Estate</div>
+          <form className="login-form" onSubmit={handleLogin}>
+            <input 
+              type="password" 
+              className="login-input" 
+              placeholder="Enter Access Code" 
+              value={passwordInput}
+              onChange={(e) => setPasswordInput(e.target.value)}
+              autoFocus
+            />
+            <button type="submit" className="login-btn">Secure Login</button>
+            {loginError && <div className="login-error">Invalid access code</div>}
+          </form>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="app">
