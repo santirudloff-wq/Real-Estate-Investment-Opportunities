@@ -3,6 +3,7 @@ import DealRow from './components/DealRow';
 import PropertyModal from './components/PropertyModal';
 import FiscalAlertsFeed from './components/FiscalAlertsFeed';
 import PipelineTracker from './components/PipelineTracker';
+import Sources from './components/Sources';
 import { PROPERTIES, computeVeritasScore } from './data/propertiesData';
 import { Bell } from 'lucide-react';
 
@@ -44,7 +45,7 @@ export default function App() {
   const [sortDesc, setSortDesc] = useState(true);
   const [selectedProperty, setSelectedProperty] = useState(null);
   const [alertsOpen, setAlertsOpen] = useState(false);
-  const [savedIds, setSavedIds] = useState(['west-01', 'nyc-01', 'ldn-01']);
+  const [savedIds, setSavedIds] = useState([]);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [passwordInput, setPasswordInput] = useState('');
   const [loginError, setLoginError] = useState(false);
@@ -200,11 +201,17 @@ export default function App() {
         {view === 'pipeline' && (
           <PipelineTracker savedProperties={savedList} onRemoveSave={toggleSave} onSelectProperty={setSelectedProperty} />
         )}
+
+        {view === 'sources' && <Sources />}
       </main>
 
       <footer className="footer">
         <span className="footer-brand">VERITAS Capital Real Estate</span>
-        <span className="footer-markets">Westchester · New York City · London · Edinburgh</span>
+        <span className="footer-markets">
+          Westchester · New York City · London · Edinburgh
+          <span style={{ margin: '0 8px', color: 'var(--gray-300)' }}>|</span>
+          <button onClick={() => setView('sources')} className="footer-link">Methodology & Sources</button>
+        </span>
         <span className="footer-date">{today}</span>
       </footer>
 

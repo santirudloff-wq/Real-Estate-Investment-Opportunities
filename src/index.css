@@ -319,3 +319,21 @@ input:focus, select:focus { border-color: var(--navy); box-shadow: 0 0 0 2px rgb
 }
 .login-btn:hover { background: #152340; }
 .login-error { color: var(--red); font-size: 12px; font-weight: 500; margin-top: 8px; }
+
+/* ── SOURCES TAB ── */
+.sources-container { max-width: 900px; margin: 0 auto; padding-top: 20px; }
+.sources-header { margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid var(--gray-200); }
+.sources-title { font-size: 18px; font-weight: 700; color: var(--gray-900); }
+.sources-sub { font-size: 13px; color: var(--gray-500); margin-top: 6px; }
+.sources-grid { display: flex; flex-direction: column; gap: 16px; }
+.source-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: 6px; padding: 20px; }
+.source-category { font-size: 13px; font-weight: 700; color: var(--gray-800); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 12px; }
+.source-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.source-list li { font-size: 13px; color: var(--gray-600); line-height: 1.5; padding-left: 12px; position: relative; }
+.source-list li::before { content: '•'; position: absolute; left: 0; color: var(--gray-400); font-weight: bold; }
+.source-list strong { color: var(--gray-900); font-weight: 600; margin-right: 4px; }
+.source-list a { color: var(--navy); text-decoration: none; }
+.source-list a:hover { text-decoration: underline; }
+
+.footer-link { background: none; border: none; color: var(--gray-400); font-size: 11px; cursor: pointer; text-decoration: underline; text-decoration-color: transparent; transition: text-decoration-color 0.2s; }
+.footer-link:hover { color: var(--gray-600); text-decoration-color: var(--gray-400); }
