@@ -18,6 +18,8 @@ export default function DealRow({ property, rank, score, onSelect }) {
       <td className="deal-td">{property.strategy}</td>
       <td className="deal-td deal-td-mono">{fmt(property.price)}</td>
       <td className="deal-td deal-td-mono">{property.currency}{Math.round(property.price / property.sqft)}</td>
+      <td className="deal-td deal-td-mono">{fmt(property.grossRevenue / 12)}</td>
+      <td className="deal-td deal-td-mono">{fmt(property.noi / 12)}</td>
       <td className="deal-td deal-td-mono">{fmt(property.noi)}</td>
       <td className="deal-td deal-td-mono">{property.capRate}%</td>
       <td className="deal-td deal-td-mono">{property.irr}%</td>

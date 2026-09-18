@@ -30,6 +30,8 @@ const COL_HEADERS = [
   { label: 'Strategy', cls: '' },
   { label: 'Price', cls: 'th-right' },
   { label: '$/sqft', cls: 'th-right' },
+  { label: 'Mo. Rent', cls: 'th-right' },
+  { label: 'Mo. Net', cls: 'th-right' },
   { label: 'NOI', cls: 'th-right' },
   { label: 'Cap Rate', cls: 'th-right' },
   { label: 'IRR', cls: 'th-right' },
